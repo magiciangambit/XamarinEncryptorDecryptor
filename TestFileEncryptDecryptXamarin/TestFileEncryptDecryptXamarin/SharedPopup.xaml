@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestFileEncryptDecryptXamarin.SharedPopup">
+    <ContentPage.Content>
+        <Frame x:Name="frameLayer"
+                                   BackgroundColor="#222222"
+                                    HorizontalOptions="FillAndExpand"
+                                    IsVisible="{Binding ToggleTemp}"
+                                    VerticalOptions="FillAndExpand">
+            <StackLayout x:Name="st1" VerticalOptions="CenterAndExpand">
+                <ActivityIndicator x:Name="actInd" 
+                                                        BackgroundColor="Transparent" 
+                                                        IsRunning="{Binding IsLoading}" 
+                                                        IsVisible="{Binding ToggleTemp}" 
+                                                        VerticalOptions="CenterAndExpand" 
+                                                        Color="Orange"/>
+                <Label HorizontalTextAlignment="Center" 
+                                            Text="Loading..." 
+                                            TextColor="White" 
+                                            XAlign="Center" YAlign="Start" x:Name="lblLoading" VerticalTextAlignment="Center" VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>

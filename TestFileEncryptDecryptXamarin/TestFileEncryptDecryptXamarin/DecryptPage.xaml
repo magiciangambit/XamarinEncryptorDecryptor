@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestFileEncryptDecryptXamarin.DecryptPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+                
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Button Text="Method 1 - Decrypt File To Base64 String" Clicked="DecryptFileToBase64String_Clicked"/>                   
+                </StackLayout>
+
+                <Frame Margin="5,5,5,5" Padding="1,1,1,1" HasShadow="False" HorizontalOptions="FillAndExpand" CornerRadius="5" OutlineColor="Black" BackgroundColor="Black">
+                    <StackLayout BackgroundColor="Aquamarine">
+                        <Entry x:Name="ent_filetofile_filename" Placeholder="Set a filename"/>
+                        <Button Text="Method 2 - Decrypt File To New Encrypted File" Clicked="DecryptFileToNewFile_Clicked"/>
+                    </StackLayout>
+                </Frame>
+
+                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Vertical">
+                    <Label Text="For decrypting encrypted string to string, use method XamEncDec.DecryptEncryptedStringAsString" BackgroundColor="LightPink"/>
+                    <Label Text="For decrypting encrypted string to file, use method XamEncDec.DecryptEncryptedStringAsNewFile" BackgroundColor="LightPink"/>
+                </StackLayout>
+               
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

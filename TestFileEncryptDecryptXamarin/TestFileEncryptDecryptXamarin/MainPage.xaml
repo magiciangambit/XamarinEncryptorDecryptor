@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TestFileEncryptDecryptXamarin"
+             x:Class="TestFileEncryptDecryptXamarin.MainPage" 
+             xmlns:views="TestFileEncryptDecryptXamarin.SharedPopup" >
+    <ContentPage.Content>
+        <ScrollView>            
+            <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+                <!--<local:SharedPopup x:Name="popup" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>-->
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Picker x:Name="p_resfile1" Title="Select resource file">
+                        <Picker.Items>
+                            <x:String>Image-Marbles.jpg</x:String>
+                            <x:String>Text File-PCLTextResource.txt</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Button Text="Method 1 - Encrypt Resource To Base64 String" Clicked="EncryptResFileToBase64String_Clicked"/>
+                    <!--<Editor x:Name="edt_encrestostr" HeightRequest="70" BackgroundColor="White" TextColor="Black" Text="Encrypted string will be generated here..." FontSize="Small"/>-->
+                </StackLayout>
+
+                <Frame Margin="5,5,5,5" Padding="1,1,1,1" HasShadow="False" HorizontalOptions="FillAndExpand" CornerRadius="5" OutlineColor="Black" BackgroundColor="Black">
+                    <StackLayout BackgroundColor="Aquamarine">
+                        <Picker x:Name="p_resfile2" Title="Select resource file">
+                            <Picker.Items>
+                                <x:String>Image-Marbles.jpg</x:String>
+                                <x:String>Text File-PCLTextResource.txt</x:String>
+                            </Picker.Items>
+                        </Picker>
+                        <Picker x:Name="p_restofile" Title="Select path for encrypted file">
+                            <Picker.Items>
+                                <x:String>Local app directory (no direct access to user)</x:String>
+                                <x:String>External storage (for Android)</x:String>
+                                <x:String>Document folder (commonly for iOS)</x:String>
+                                <x:String>Library folder (commonly for iOS - no direct access to user)</x:String>
+                                <x:String>Roaming folder (commonly for UWP, etc.)</x:String>
+                            </Picker.Items>
+                        </Picker>
+                        <Entry x:Name="ent_restofile_foldername" Placeholder="Set a folder name(optional)"/>
+                        <Entry x:Name="ent_restofile_filename" Placeholder="Set a filename"/>
+                        <Button Text="Method 2 - Encrypt Resource To Encrypted File" Clicked="EncryptResFileToNewFile_Clicked"/>
+                    </StackLayout>
+                </Frame>
+
+
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Button Text="Method 3 - Encrypt File To Base64 String" Clicked="EncryptFileToBase64String_Clicked"/>
+                    <!--<Editor x:Name="edt_encfiletostr" HeightRequest="70" BackgroundColor="White" TextColor="Black"/>-->
+                </StackLayout>
+
+                <Frame Margin="5,5,5,5" Padding="1,1,1,1" HasShadow="False" HorizontalOptions="FillAndExpand" CornerRadius="5" OutlineColor="Black" BackgroundColor="Black">
+                    <StackLayout BackgroundColor="Aquamarine">
+                        <Entry x:Name="ent_filetofile_filename" Placeholder="Set a filename"/>
+                        <Button Text="Method 4 - Encrypt File To New Encrypted File" Clicked="EncryptFileToNewFile_Clicked"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+    
+    
+
+</ContentPage>

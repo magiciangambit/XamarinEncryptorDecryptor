@@ -6,7 +6,7 @@ Encryption and Decryption for Xamarin
 <img src="TestFileEncryptDecryptXamarin/Screenshot_1544081004.png" width="250" height="400">
 </p>
 
-Encryptor and Decryptor for Xamarin
+Encryptor and Decryptor for Xamarin using AES
 
 This plugin is to ease developer to implement encryption and decryption in xamarin
 
